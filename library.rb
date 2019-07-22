@@ -14,4 +14,7 @@ class Library
     end
   end
 
+  def get_rental_info(title)
+    get_book_info(title)[:rental_details]
+  end
 end

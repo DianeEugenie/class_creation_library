@@ -64,5 +64,14 @@ class TestLibrary < MiniTest::Test
     }, @library.get_book_info("harry_potter"))
   end
 
+  # Create a method that takes in a book title and returns only the rental details for that book.
+
+  def test_get_rental_info()
+    assert_equal({
+      student_name: "Maria",
+      date: "22/07/19"
+      }, @library.get_rental_info("harry_potter"))
+  end
+
 
 end
