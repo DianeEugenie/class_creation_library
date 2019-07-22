@@ -1,3 +1,5 @@
+require('pry')
+
 class Library
 
   def initialize(books)
@@ -17,4 +19,16 @@ class Library
   def get_rental_info(title)
     get_book_info(title)[:rental_details]
   end
+
+  def add_new_book(title)
+    #binding.pry
+    @books.push({title: title,
+    rental_details: {
+      student_name: "",
+      date: ""
+      }
+    })
+  end
+
+
 end

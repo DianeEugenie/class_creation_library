@@ -35,7 +35,7 @@ class TestLibrary < MiniTest::Test
         title: "harry_potter",
         rental_details: {
         student_name: "Maria",
-        date: "22/07/19"
+        date: "19/07/19"
         }
       }]
     )
@@ -59,7 +59,7 @@ class TestLibrary < MiniTest::Test
       title: "harry_potter",
       rental_details: {
       student_name: "Maria",
-      date: "22/07/19"
+      date: "19/07/19"
       }
     }, @library.get_book_info("harry_potter"))
   end
@@ -69,8 +69,14 @@ class TestLibrary < MiniTest::Test
   def test_get_rental_info()
     assert_equal({
       student_name: "Maria",
-      date: "22/07/19"
+      date: "19/07/19"
       }, @library.get_rental_info("harry_potter"))
+  end
+
+  # Create a method that takes in a book title and adds it to our book list (add a new hash for the book with the student name and date being left as empty strings)
+
+  def test_add_new_book()
+    assert_equal(3, @library.add_new_book("a_game_of_thrones").count)
   end
 
 
