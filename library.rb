@@ -30,5 +30,12 @@ class Library
     })
   end
 
+  def change_rent_details(title, student, date)
+    get_rental_info(title)[:student_name] = student
+    get_rental_info(title)[:date] = date
+  end
+
+
+
 
 end

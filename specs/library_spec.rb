@@ -79,5 +79,16 @@ class TestLibrary < MiniTest::Test
     assert_equal(3, @library.add_new_book("a_game_of_thrones").count)
   end
 
+  # Create a method that changes the rental details of a book by taking in the title of the book, the student renting it and the date it's due to be returned.
+
+  def test_change_rent_details()
+    #Act
+    @library.change_rent_details("lord_of_the_rings", "Billy", "30/07/19")
+    assert_equal({
+     student_name: "Billy",
+     date: "30/07/19"
+    }, @library.get_rental_info("lord_of_the_rings"))
+  end
+
 
 end
